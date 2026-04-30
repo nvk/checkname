@@ -13,6 +13,11 @@ test -f "$ROOT/plugins/checkname/skills/checkname/SKILL.md"
 test -f "$ROOT/plugins/checkname/skills/checkname/references/platforms.md"
 test -f "$ROOT/plugins/checkname-opencode/skills/checkname/SKILL.md"
 test -f "$ROOT/plugins/checkname-opencode/skills/checkname/references/platforms.md"
+test -f "$ROOT/scripts/bootstrap-codex-plugin.sh"
+test -f "$ROOT/scripts/verify-codex-plugin.sh"
+
+bash -n "$ROOT/scripts/bootstrap-codex-plugin.sh"
+bash -n "$ROOT/scripts/verify-codex-plugin.sh"
 
 python3 - "$ROOT" <<'PY'
 import json

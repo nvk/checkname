@@ -139,19 +139,45 @@ Install from GitHub:
 codex plugin marketplace add nvk/checkname
 ```
 
-Or, if you are adding it from a local checkout:
-
-```bash
-codex plugin marketplace add /absolute/path/to/checkname/plugins/checkname
-```
-
-Then open `/plugins`, enable `checkname`, and use it.
+Then open `/plugins`, enable `checkname`, restart the session if needed, and
+use it.
 
 Canonical explicit invocation in Codex:
 
 ```text
 @checkname northstar
 @checkname "North Star Labs" --trademark-uspto
+```
+
+### Codex Local Checkout
+
+If you are developing from a local checkout and want Codex to resolve
+`@checkname` from this repo instead of a cached marketplace copy:
+
+```bash
+./scripts/bootstrap-codex-plugin.sh --verify
+```
+
+That helper:
+
+- registers this repo root as a local Codex marketplace source
+- writes a managed `[plugins."checkname@checkname"]` enable block
+- runs a headless `@checkname` probe when `--verify` is included
+
+If Codex already has a different `checkname` marketplace source configured, the
+bootstrap helper will stop and tell you to use a clean Codex home or remove and
+re-add the marketplace first.
+
+You can also inspect the managed config block without writing it:
+
+```bash
+./scripts/bootstrap-codex-plugin.sh --print
+```
+
+And rerun verification later:
+
+```bash
+./scripts/verify-codex-plugin.sh
 ```
 
 If Codex starts exploring the current repo instead of using the plugin, the
