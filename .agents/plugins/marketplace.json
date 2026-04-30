@@ -1,7 +1,7 @@
 {
-  "name": "Local Plugins",
+  "name": "checkname",
   "interface": {
-    "displayName": "Local Plugins"
+    "displayName": "checkname"
   },
   "plugins": [
     {
