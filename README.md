@@ -107,20 +107,16 @@ This repo ships the same workflow in multiple forms:
 
 ### Claude Code
 
-`checkname` does not yet ship as a one-line Claude marketplace package.
-
-For now, use the plugin from `claude-plugin/` and sync it into Claude's plugin
-cache manually.
-
-Example:
+Add the marketplace once:
 
 ```bash
-REPO=/absolute/path/to/checkname/claude-plugin
-DEST=~/.claude/plugins/cache/checkname/checkname
-VERSION=$(grep '"version"' "$REPO/.claude-plugin/plugin.json" | grep -o '[0-9.]*')
-rm -rf "$DEST"/*
-mkdir -p "$DEST/$VERSION"
-cp -R "$REPO/.claude-plugin" "$REPO/commands" "$REPO/skills" "$DEST/$VERSION/"
+claude plugin marketplace add nvk/checkname
+```
+
+Then install the plugin:
+
+```bash
+claude plugin install checkname@checkname
 ```
 
 Primary command:
