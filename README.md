@@ -147,6 +147,20 @@ codex plugin marketplace add /absolute/path/to/checkname/plugins/checkname
 
 Then open `/plugins`, enable `checkname`, and use it.
 
+Canonical explicit invocation in Codex:
+
+```text
+@checkname northstar
+@checkname "North Star Labs" --trademark-uspto
+```
+
+If Codex starts exploring the current repo instead of using the plugin, the
+usual causes are:
+
+- the marketplace was added but the plugin was not enabled in `/plugins`
+- the current session predates the install and needs a restart
+- `@checkname` was typed in a client where the plugin is not installed
+
 ### OpenCode
 
 Load:

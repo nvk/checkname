@@ -5,6 +5,20 @@ description: Check domain and social namespace availability for candidate names 
 
 # checkname
 
+## Codex Plugin Notes
+
+Codex plugins do not register Claude-style slash commands. In Codex, the
+canonical explicit invocation is:
+
+```text
+@checkname northstar
+@checkname "North Star Labs" --trademark-uspto
+```
+
+If `@checkname` is present, treat it as an explicit request to use this skill.
+Do not fall back to generic repo exploration unless the bundled checker itself
+fails or the plugin is not installed/enabled in the current Codex session.
+
 ## Purpose
 
 This skill helps an agent answer:
