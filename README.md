@@ -107,7 +107,21 @@ This repo ships the same workflow in multiple forms:
 
 ### Claude Code
 
-Use the plugin in `claude-plugin/`.
+`checkname` does not yet ship as a one-line Claude marketplace package.
+
+For now, use the plugin from `claude-plugin/` and sync it into Claude's plugin
+cache manually.
+
+Example:
+
+```bash
+REPO=/absolute/path/to/checkname/claude-plugin
+DEST=~/.claude/plugins/cache/checkname/checkname
+VERSION=$(grep '"version"' "$REPO/.claude-plugin/plugin.json" | grep -o '[0-9.]*')
+rm -rf "$DEST"/*
+mkdir -p "$DEST/$VERSION"
+cp -R "$REPO/.claude-plugin" "$REPO/commands" "$REPO/skills" "$DEST/$VERSION/"
+```
 
 Primary command:
 
@@ -123,19 +137,19 @@ For federal trademark triage:
 
 ### Codex
 
-Clone the repo, then load the generated plugin from:
+Install from GitHub:
 
-```text
-plugins/checkname/
+```bash
+codex plugin marketplace add nvk/checkname
 ```
 
-If you are adding it from a local checkout:
+Or, if you are adding it from a local checkout:
 
 ```bash
 codex plugin marketplace add /absolute/path/to/checkname/plugins/checkname
 ```
 
-Then ask for a namespace comparison through the plugin.
+Then open `/plugins`, enable `checkname`, and use it.
 
 ### OpenCode
 
