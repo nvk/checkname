@@ -1,0 +1,38 @@
+{
+  "name": "checkname",
+  "version": "0.1.0",
+  "description": "Check domain and social handle availability across common platforms for brand and product naming work.",
+  "author": {
+    "name": "nvk",
+    "url": "https://github.com/nvk"
+  },
+  "homepage": "https://github.com/nvk/checkname",
+  "repository": "https://github.com/nvk/checkname",
+  "license": "MIT",
+  "keywords": [
+    "namespace",
+    "domain",
+    "handles",
+    "branding",
+    "research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "checkname",
+    "shortDescription": "Check domain and social namespace availability",
+    "longDescription": "Probe domain candidates via RDAP and social handles via public profile URLs, then compare candidate variants conservatively across platforms.",
+    "developerName": "nvk",
+    "category": "Research",
+    "capabilities": [
+      "Read",
+      "Bash"
+    ],
+    "websiteURL": "https://github.com/nvk/checkname",
+    "defaultPrompt": [
+      "Check whether this product name is available on .com and GitHub.",
+      "Compare three brand variants across domains and major social platforms.",
+      "Give me the cleanest namespace option for this launch."
+    ],
+    "brandColor": "#14532D"
+  }
+}

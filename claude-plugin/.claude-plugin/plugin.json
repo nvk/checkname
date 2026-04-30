@@ -1,0 +1,17 @@
+{
+  "name": "checkname",
+  "version": "0.1.0",
+  "description": "Check domain and social handle availability across common platforms with conservative availability heuristics and cross-platform variant comparison.",
+  "author": {
+    "name": "nvk"
+  },
+  "license": "MIT",
+  "keywords": [
+    "branding",
+    "domains",
+    "social-media",
+    "checkname",
+    "availability",
+    "handles"
+  ]
+}

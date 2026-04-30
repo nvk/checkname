@@ -1,0 +1,8 @@
+interface:
+  displayName: checkname
+  shortDescription: Check domain and social namespace availability
+  longDescription: Probe domain candidates via RDAP and social profile URLs, then compare candidate variants conservatively across platforms.
+policy:
+  tools:
+    - Read
+    - Bash
